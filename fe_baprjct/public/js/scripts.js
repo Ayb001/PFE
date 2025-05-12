@@ -60,7 +60,6 @@
 			// Called after the entrance animation is executed.
 		}
     });
-    
 
     /* Card Slider - Swiper */
 	var cardSlider = new Swiper('.card-slider', {

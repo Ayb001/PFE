@@ -109,6 +109,7 @@ function Home() {
     {/* end of navbar */}
 
 
+ 
     {/* Header */}
     <header id="header" className="header">
         <div className="header-content">
@@ -116,9 +117,9 @@ function Home() {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="text-container">
-                            <h1>PLATEFORME <span id="js-rotating">D’INVESTISSEMENT, D’ACCOMPAGNEMENT, DE PROJETS</span></h1>
-                            <p className="p-heading p-large">Aria is a top consultancy company specializing in business growth using online marketing and conversion optimization tactics</p>
-                            <a className="btn-solid-lg page-scroll" href="#intro">DISCOVER</a>
+                            <h1>PLATEFORME <span id="js-rotating">D'INVESTISSEMENT, D'ACCOMPAGNEMENT, DE PROJETS</span></h1>
+                            <p className="p-heading p-large">Une solution web pour digitaliser les parcours d’accompagnement à l’investissement et référencer les initiatives touristiques et économiques dans la région Drâa-Tafilalet.</p>
+                            <a className="btn-solid-lg page-scroll" href="#intro">DÉCOUVRIR</a>
                         </div>
                     </div> {/* end of col */}
                 </div> {/* end of row */}
@@ -126,6 +127,7 @@ function Home() {
         </div> {/* end of header-content */}
     </header> {/* end of header */}
     {/* end of header */}
+
 
 
     {/* Intro */}
