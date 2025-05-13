@@ -47,19 +47,62 @@
         $(".navbar-collapse").collapse('hide');
     });
 
+//part change 
 
-    /* Rotating Text - Morphtext */
-	$("#js-rotating").Morphext({
-		// The [in] animation type. Refer to Animate.css for a list of available animations.
-		animation: "fadeIn",
-		// An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
-		separator: ",",
-		// The delay between the changing of each phrase in milliseconds.
-		speed: 2000,
-		complete: function () {
-			// Called after the entrance animation is executed.
-		}
-    });
+// Add the new anime.js animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Make sure the element exists
+    var textWrapper = document.querySelector('#js-rotating');
+    if (textWrapper) {
+        // Store the original text content
+        var originalText = textWrapper.textContent;
+        
+        // Split each word/phrase by comma (keep your original separator)
+        var phrases = originalText.split(',');
+        var currentPhraseIndex = 0;
+        
+        // Set initial phrase
+        textWrapper.textContent = phrases[0].trim();
+        
+        // Wrap every letter in a span
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        
+        // Create animation timeline
+        var timeline = anime.timeline({
+            loop: true,
+            complete: function() {
+                // Change to next phrase when animation completes
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                textWrapper.textContent = phrases[currentPhraseIndex].trim();
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                
+                // Restart animation
+                timeline.restart();
+            }
+        });
+        
+        // Add animations to timeline
+        timeline
+            .add({
+                targets: '#js-rotating .letter',
+                opacity: [0, 1],
+                easing: "easeInOutQuad",
+                duration: 2250,
+                delay: function(el, i) {
+                    return 150 * (i + 1);
+                }
+            })
+            .add({
+                targets: '#js-rotating',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+    }
+});
+
+//part change end
 
     /* Card Slider - Swiper */
 	var cardSlider = new Swiper('.card-slider', {

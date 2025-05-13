@@ -802,6 +802,14 @@ input[type='checkbox'] {
 }
 
 
+/* rotating header animation */
+
+#js-rotating .letter {
+	display: inline-block;
+	line-height: 1em;
+	opacity: 0; /* Start with letters invisible */
+  }
+
 /*********************/
 /*     05. Intro     */
 /*********************/

@@ -1,19 +1,23 @@
+/* global anime */
 
 import React, { useEffect } from 'react';
 
-function Home() {
-  useEffect(() => {
-    const loadScript = (src) =>
-      new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.async = true;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
-      });
 
-    // Load in the correct order
+function Home() {
+  // Load scripts in the correct order
+  const loadScript = (src) =>
+    new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.body.appendChild(script);
+    });
+
+  // useEffect to load scripts and initialize animations
+  useEffect(() => {
+    // Load scripts in sequence
     Promise.resolve()
       .then(() => loadScript('/js/jquery.min.js'))
       .then(() => loadScript('/js/bootstrap.min.js'))
@@ -24,9 +28,74 @@ function Home() {
       .then(() => loadScript('/js/isotope.pkgd.min.js'))
       .then(() => loadScript('/js/validator.min.js'))
       .then(() => loadScript('/js/scripts.js'))
+      .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js')) // Load anime.js
+      .then(() => {
+        // Once all scripts are loaded, initialize animations
+        const animationTimer = setTimeout(() => {
+          if (typeof anime !== 'undefined') {
+            console.log("Initializing letter animation");
+
+            const textWrapper = document.querySelector('#js-rotating');
+            if (!textWrapper) {
+              console.error("Element #js-rotating not found");
+              return;
+            }
+
+            const phrases = [
+                "D'INVESTISSEMENT",
+                "D'ACCOMPAGNEMENT",
+                "DE PROJETS"
+              ];
+              console.log("Text to animate:", phrases);
+              
+            let currentPhraseIndex = 0;
+
+            function setPhrase() {
+              textWrapper.textContent = phrases[currentPhraseIndex].trim();
+              textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            }
+
+            setPhrase();
+
+            function animatePhrase() {
+              anime.timeline({ loop: false })
+                .add({
+                  targets: '#js-rotating .letter',
+                  opacity: [0, 1],
+                  easing: "easeInOutQuad",
+                  duration: 2250,
+                  delay: (el, i) => 150 * (i + 1)
+                })
+                .add({
+                  targets: '#js-rotating',
+                  opacity: 0,
+                  duration: 1000,
+                  easing: "easeOutExpo",
+                  delay: 1000,
+                  complete: function () {
+                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                    setPhrase();
+                    document.querySelector('#js-rotating').style.opacity = 1;
+                    setTimeout(animatePhrase, 500);
+                  }
+                });
+            }
+
+            animatePhrase();
+          } else {
+            console.error("anime.js not loaded");
+          }
+        }, 2000);
+
+        return () => {
+          clearTimeout(animationTimer);
+        };
+      })
       .catch((err) => console.error('Failed to load scripts:', err));
   }, []);
 
+
+  // start the return 
   return (
     <div>
           
