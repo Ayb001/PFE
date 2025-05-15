@@ -668,104 +668,31 @@ function Home() {
     {/* end of testimonials */}
 
 
-    {/* Call Me */}
-    <div id="callMe" className="form-1">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-6">
-                    <div className="text-container">
-                        <div className="section-title">CALL ME</div>
-                        <h2 className="white">Have Us Contact You By Filling And Submitting The Form</h2>
-                        <p className="white">You are just a few steps away from a personalized offer. Just fill in the form and send it to us and we'll get right back with a call to help you decide what service package works.</p>
-                        <ul className="list-unstyled li-space-lg white">
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">It's very easy just fill in the form so we can call</div>
-                            </li>
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">During the call we'll require some info about the company</div>
-                            </li>
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">Don't hesitate to email us for any questions or inquiries</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> {/* end of col */}
-                <div className="col-lg-6">
-                   
-                    {/* Call Me Form */}
-                    <form id="callMeForm" data-toggle="validator" data-focus="false">
-                        <div className="form-group">
-                            <input type="text" className="form-control-input" id="lname" name="lname" required/>
-                            <label className="label-control" for="lname">Name</label>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <input type="text" className="form-control-input" id="lphone" name="lphone" required/>
-                            <label className="label-control" for="lphone">Phone</label>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <input type="email" className="form-control-input" id="lemail" name="lemail" required/>
-                            <label className="label-control" for="lemail">Email</label>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <select className="form-control-select" id="lselect" required>
-                                <option className="select-option" value="" disabled selected>Interested in...</option>
-                                <option className="select-option" value="Off The Ground">Off The Ground</option>
-                                <option className="select-option" value="Accelerated Growth">Accelerated Growth</option>
-                                <option className="select-option" value="Market Domination">Market Domination</option>
-                            </select>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group checkbox white">
-                            <input type="checkbox" id="lterms" value="Agreed-to-Terms" name="lterms" required/>I agree with Aria's stated <a className="white" href="privacy-policy.html">Privacy Policy</a> and <a className="white" href="terms-conditions.html">Terms & Conditions</a>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <button type="submit" className="form-control-submit-button">CALL ME</button>
-                        </div>
-                        <div className="form-message">
-                            <div id="lmsgSubmit" className="h3 text-center hidden"></div>
-                        </div>
-                    </form>
-                    {/* end of call me form */}
-                    
-                </div> {/* end of col */}
-            </div> {/* end of row */}
-        </div> {/* end of container */}
-    </div> {/* end of form-1 */}
-    {/* end of call me */}
-
-
     {/* Projects */}
 	<div id="projects" className="filter">
 		<div className="container">
             <div className="row">
                 <div className="col-lg-12">
-                    <div className="section-title">PROJECTS</div>
-                    <h2>Projects That We're Proud Of</h2>
+                    <div className="section-title"> Projets</div>
+                    <h2>Aperçu des Projets Régionaux</h2>
                 </div> {/* end of col */}
             </div> {/* end of row */}
             <div className="row">
                 <div className="col-lg-12">
                     {/* Filter */}
                     <div className="button-group filters-button-group">
-                        <a className="button is-checked" data-filter="*"><span>SHOW ALL</span></a>
-                        <a className="button" data-filter=".design"><span>DESIGN</span></a>
-                        <a className="button" data-filter=".development"><span>DEVELOPMENT</span></a>
-                        <a className="button" data-filter=".marketing"><span>MARKETING</span></a>
-                        <a className="button" data-filter=".seo"><span>SEO</span></a>
+                        <a className="button is-checked" data-filter="*"><span>Afficher tout</span></a>
+                        <a className="button" data-filter=".design"><span>MINES</span></a>
+                        <a className="button" data-filter=".development"><span>TOURISME</span></a>
+                        <a className="button" data-filter=".marketing"><span>ENERGIE</span></a>
+                        <a className="button" data-filter=".seo"><span>Industrie créative</span></a>
                     </div> {/* end of button group */}
                     <div className="grid">
                         <div className="element-item development">
-                            <a className="popup-with-move-anim" href="#project-1"><div className="element-item-overlay"><span>Online Banking</span></div><img src="images/project-1.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-1"><div className="element-item-overlay"><span>Traitement de Barite</span></div><img src="images/project-1.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item development">
-                            <a className="popup-with-move-anim" href="#project-2"><div className="element-item-overlay"><span>Classic Industry</span></div><img src="images/project-2.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-2"><div className="element-item-overlay"><span>Cartographie Géologique</span></div><img src="images/project-2.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item design development marketing">
                             <a className="popup-with-move-anim" href="#project-3"><div className="element-item-overlay"><span>BoomBap Audio</span></div><img src="images/project-3.jpg" alt="alternative"/></a>
@@ -804,16 +731,16 @@ function Home() {
                 <img className="img-fluid" src="images/project-1.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>Online Banking</h3>
+                <h3>Traitement de Barite</h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Mines</h6>
+                <p>Objectif : Mettre en place une unité locale de traitement de barite pour augmenter la valeur ajoutée dans la région.</p>
+                <p>Résumé :<br/>Le projet vise à exploiter les gisements disponibles à Drâa-Tafilalet et à transformer la matière première sur place afin de limiter les exportations brutes et créer de l’emploi local.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text">Ce projet est une vraie opportunité pour dynamiser la filière minière locale.</p>
+                    <p className="testimonial-author">M. Idrissi, directeur</p>
                 </div>
-                <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+                 <a className="btn-outline-reg mfp-close as-button" href="#projects">RETOUR</a> 
             </div> {/* end of col */}
         </div> {/* end of row */}
     </div> {/* end of lightbox-basic */}
@@ -827,16 +754,16 @@ function Home() {
                 <img className="img-fluid" src="images/project-2.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>Classic Industry</h3>
+                <h3>Cartographie Géologique</h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Mines</h6>
+                <p>Objectif : Réaliser des études géologiques approfondies pour identifier de nouveaux gisements miniers.</p>
+                <p>Résumé :<br/>Le projet consiste à mener une campagne de prospection géologique dans les zones prometteuses de la région. Il vise à améliorer la connaissance du sous-sol, attirer des investisseurs et planifier un développement minier maîtrisé.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text">Un projet stratégique pour révéler le potentiel minier encore inexploité de Drâa-Tafilalet.</p>
+                    <p className="testimonial-author">– Y. Benomar, responsable technique</p>
                 </div>
-                <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+                <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> {/* end of col */}
         </div> {/* end of row */}
     </div> {/* end of lightbox-basic */}
@@ -1145,6 +1072,78 @@ function Home() {
         </div> {/* end of container */}
     </div> {/* end of counter */}
     {/* end of about */}
+
+ {/* Call Me */}
+    <div id="callMe" className="form-1">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-6">
+                    <div className="text-container">
+                        <div className="section-title">CALL ME</div>
+                        <h2 className="white">Have Us Contact You By Filling And Submitting The Form</h2>
+                        <p className="white">You are just a few steps away from a personalized offer. Just fill in the form and send it to us and we'll get right back with a call to help you decide what service package works.</p>
+                        <ul className="list-unstyled li-space-lg white">
+                            <li className="media">
+                                <i className="fas fa-square"></i>
+                                <div className="media-body">It's very easy just fill in the form so we can call</div>
+                            </li>
+                            <li className="media">
+                                <i className="fas fa-square"></i>
+                                <div className="media-body">During the call we'll require some info about the company</div>
+                            </li>
+                            <li className="media">
+                                <i className="fas fa-square"></i>
+                                <div className="media-body">Don't hesitate to email us for any questions or inquiries</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> {/* end of col */}
+                <div className="col-lg-6">
+                   
+                    {/* Call Me Form */}
+                    <form id="callMeForm" data-toggle="validator" data-focus="false">
+                        <div className="form-group">
+                            <input type="text" className="form-control-input" id="lname" name="lname" required/>
+                            <label className="label-control" for="lname">Name</label>
+                            <div className="help-block with-errors"></div>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" className="form-control-input" id="lphone" name="lphone" required/>
+                            <label className="label-control" for="lphone">Phone</label>
+                            <div className="help-block with-errors"></div>
+                        </div>
+                        <div className="form-group">
+                            <input type="email" className="form-control-input" id="lemail" name="lemail" required/>
+                            <label className="label-control" for="lemail">Email</label>
+                            <div className="help-block with-errors"></div>
+                        </div>
+                        <div className="form-group">
+                            <select className="form-control-select" id="lselect" required>
+                                <option className="select-option" value="" disabled selected>Interested in...</option>
+                                <option className="select-option" value="Off The Ground">Off The Ground</option>
+                                <option className="select-option" value="Accelerated Growth">Accelerated Growth</option>
+                                <option className="select-option" value="Market Domination">Market Domination</option>
+                            </select>
+                            <div className="help-block with-errors"></div>
+                        </div>
+                        <div className="form-group checkbox white">
+                            <input type="checkbox" id="lterms" value="Agreed-to-Terms" name="lterms" required/>I agree with Aria's stated <a className="white" href="privacy-policy.html">Privacy Policy</a> and <a className="white" href="terms-conditions.html">Terms & Conditions</a>
+                            <div className="help-block with-errors"></div>
+                        </div>
+                        <div className="form-group">
+                            <button type="submit" className="form-control-submit-button">CALL ME</button>
+                        </div>
+                        <div className="form-message">
+                            <div id="lmsgSubmit" className="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    {/* end of call me form */}
+                    
+                </div> {/* end of col */}
+            </div> {/* end of row */}
+        </div> {/* end of container */}
+    </div> {/* end of form-1 */}
+    {/* end of call me */}
 
 
     {/* Contact */}
