@@ -1,10 +1,8 @@
-/* global anime */
-
 import React, { useEffect } from 'react';
 
+/* global anime */
 
 function Home() {
-  // Load scripts in the correct order
   const loadScript = (src) =>
     new Promise((resolve, reject) => {
       const script = document.createElement('script');
@@ -15,56 +13,53 @@ function Home() {
       document.body.appendChild(script);
     });
 
-  // useEffect to load scripts and initialize animations
   useEffect(() => {
-    // Load scripts in sequence
     Promise.resolve()
       .then(() => loadScript('/js/jquery.min.js'))
       .then(() => loadScript('/js/bootstrap.min.js'))
       .then(() => loadScript('/js/popper.min.js'))
-      .then(() => loadScript('/js/jquery.easing.min.js'))
+      .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js'))
       .then(() => loadScript('/js/jquery.magnific-popup.js'))
       .then(() => loadScript('/js/morphext.min.js'))
       .then(() => loadScript('/js/isotope.pkgd.min.js'))
       .then(() => loadScript('/js/validator.min.js'))
       .then(() => loadScript('/js/scripts.js'))
-      .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js')) // Load anime.js
+      .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js'))
       .then(() => {
-        // Once all scripts are loaded, initialize animations
         const animationTimer = setTimeout(() => {
           if (typeof anime !== 'undefined') {
-            console.log("Initializing letter animation");
-
             const textWrapper = document.querySelector('#js-rotating');
             if (!textWrapper) {
               console.error("Element #js-rotating not found");
               return;
             }
 
+            textWrapper.style.opacity = 0;
+
             const phrases = [
-                "D'INVESTISSEMENT",
-                "D'ACCOMPAGNEMENT",
-                "DE PROJETS"
-              ];
-              console.log("Text to animate:", phrases);
-              
+              "D'INVESTISSEMENT",
+              "D'ACCOMPAGNEMENT",
+              "DE PROJETS"
+            ];
             let currentPhraseIndex = 0;
 
             function setPhrase() {
-              textWrapper.textContent = phrases[currentPhraseIndex].trim();
-              textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+              const cleanText = phrases[currentPhraseIndex].trim();
+              textWrapper.innerHTML = cleanText.replace(/\S/g, "<span class='letter'>$&</span>");
             }
 
-            setPhrase();
-
             function animatePhrase() {
+              setPhrase();
               anime.timeline({ loop: false })
                 .add({
                   targets: '#js-rotating .letter',
                   opacity: [0, 1],
                   easing: "easeInOutQuad",
                   duration: 2250,
-                  delay: (el, i) => 150 * (i + 1)
+                  delay: (el, i) => 150 * (i + 1),
+                  begin: () => {
+                    textWrapper.style.opacity = 1;
+                  }
                 })
                 .add({
                   targets: '#js-rotating',
@@ -72,11 +67,9 @@ function Home() {
                   duration: 1000,
                   easing: "easeOutExpo",
                   delay: 1000,
-                  complete: function () {
+                  complete: () => {
                     currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                    setPhrase();
-                    document.querySelector('#js-rotating').style.opacity = 1;
-                    setTimeout(animatePhrase, 500);
+                    animatePhrase();
                   }
                 });
             }
@@ -85,15 +78,12 @@ function Home() {
           } else {
             console.error("anime.js not loaded");
           }
-        }, 2000);
+        }, 1000);
 
-        return () => {
-          clearTimeout(animationTimer);
-        };
+        return () => clearTimeout(animationTimer);
       })
       .catch((err) => console.error('Failed to load scripts:', err));
   }, []);
-
 
   // start the return 
   return (
@@ -117,7 +107,7 @@ function Home() {
         {/* <a className="navbar-brand logo-text page-scroll" href="index.html">Aria</a> */}
 
         {/* Image Logo */}
-        <a className="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"/></a>
+        <a className="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="alternative"/></a>
         
         {/* Mobile Menu Toggle Button */}
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -181,11 +171,16 @@ function Home() {
  
     {/* Header */}
     <header id="header" className="header">
+        <video autoPlay muted loop playsInline className="bg-video">
+  <source src="images/videoplayback.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
         <div className="header-content">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="text-container">
+                            
                             <h1>PLATEFORME <span id="js-rotating">D'INVESTISSEMENT, D'ACCOMPAGNEMENT, DE PROJETS</span></h1>
                             <p className="p-heading p-large">Une solution web pour digitaliser les parcours d’accompagnement à l’investissement et référencer les initiatives touristiques et économiques dans la région Drâa-Tafilalet.</p>
                             <a className="btn-solid-lg page-scroll" href="#intro">DÉCOUVRIR</a>
@@ -206,10 +201,10 @@ function Home() {
                 <div className="col-lg-5">
                     <div className="text-container">
                         <div className="section-title">INTRO</div>
-                        <h2>We Offer Some Of The Best Business Growth Services In Town</h2>
-                        <p>Launching a new company or developing the market position of an existing one can be quite an overwhelming processs at times.</p>
-                        <p className="testimonial-text">"Our mission here at Aira is to get you through those tough moments relying on our team's expertise in starting and growing companies."</p>
-                        <div className="testimonial-author">Louise Donovan - CEO</div>
+                        <h2>Nous offrons certains des meilleurs services pour le développement économique de la région</h2>
+                        <p>Lancer de nouveaux projets ou renforcer la position économique d’une région peut parfois être un défi complexe et exigeant.</p>
+                        <p className="testimonial-text">« Notre mission ici est d’accompagner tous les acteurs de la région grâce à l’expertise de notre équipe pour favoriser la création et la croissance durable. »</p>
+                        <div className="testimonial-author">Allal El BAZ - Directeur CRI - Darâa-Tafilalet</div>
                     </div> {/* end of text-container */}
                 </div> {/* end of col */}
                 <div className="col-lg-7">
@@ -229,41 +224,41 @@ function Home() {
             <div className="row">
                 <div className="col-lg-12">
                     
-                    {/* Card */}
+                    {/* Card 1*/}
                     <div className="card">
                         <span className="fa-stack">
                             <span className="hexagon"></span>
                             <i className="fas fa-binoculars fa-stack-1x"></i>
                         </span>
                         <div className="card-body">
-                            <h4 className="card-title">Environment Analysis</h4>
-                            <p>The starting point of any success story is knowing your current position in the business environment</p>
+                            <h4 className="card-title">Analyse de l’environnement</h4>
+                            <p>Nous étudions les réalités économiques et sociales locales pour poser les bases d’un développement adapté et durable.</p>
                         </div>
                     </div>
                     {/* end of card */}
 
-                    {/* Card */}
+                    {/* Card 2*/}
                     <div className="card">
                         <span className="fa-stack">
                             <span className="hexagon"></span>
                             <i className="fas fa-list-alt fa-stack-1x"></i>
                         </span>
                         <div className="card-body">
-                            <h4 className="card-title">Development Planning</h4>
-                            <p>After completing the environmental analysis the next stage is to design and  plan your development strategy</p>
+                            <h4 className="card-title">Accompagnement au développement</h4>
+                            <p>Nous concevons des plans sur mesure et accompagnons les porteurs de projets dans chaque étape stratégique.</p>
                         </div>
                     </div>
                     {/* end of card */}
 
-                    {/* Card */}
+                    {/* Card 3*/}
                     <div className="card">
                         <span className="fa-stack">
                             <span className="hexagon"></span>
                             <i className="fas fa-chart-pie fa-stack-1x"></i>
                         </span>
                         <div className="card-body">
-                            <h4 className="card-title">Execution & Evaluation</h4>
-                            <p>In this phase you will focus on executing the actions plan and evaluating the results after each marketing campaign</p>
+                            <h4 className="card-title">Exécution & Évaluation</h4>
+                            <p>Nous assurons le suivi et l’évaluation des actions pour garantir leur efficacité et ajuster les démarches si nécessaire.</p>
                         </div>
                     </div>
                     {/* end of card */}
@@ -280,88 +275,110 @@ function Home() {
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
-                    <div className="section-title">SERVICES</div>
-                    <h2>Choose The Service Package<br/> That Suits Your Needs</h2>
+                    <div className="section-title"> Nos Accompagnements</div>
+                    <h2>Trouvez l'accompagnement adapté à votre projet,<br/> quel que soit son niveau d’avancement.</h2>
                 </div> {/* end of col */}
             </div> {/* end of row */}
             <div className="row">
                 <div className="col-lg-12">
                     
-                    {/* Card */}
+                    {/* Card 1*/}
                     <div className="card">
                         <div className="card-image">
                             <img className="img-fluid" src="images/services-1.jpg" alt="alternative"/>
                         </div>
                         <div className="card-body">
-                            <h3 className="card-title">Off The Ground Off The Ground</h3>
-                            <p>Perfect for fresh ideas or young startups, this package will help get the business off the ground</p>
+                            <h3 className="card-title">🔍 Identification d’Opportunités</h3>
                             <ul className="list-unstyled li-space-lg">
                                 <li className="media">
                                     <i className="fas fa-square"></i>
-                                    <div className="media-body">Environment and competition</div>
+                                    <div className="media-body">Accès à un catalogue complet de projets multisectoriels (santé, tourisme, infrastructure, agriculture, etc.)</div>
                                 </li>
                                 <li className="media">
                                     <i className="fas fa-square"></i>
-                                    <div className="media-body">Designing the marketing plan</div>
+                                    <div className="media-body">Filtres avancés pour trouver les projets selon secteur, budget, localisation et critères de durabilité</div>
+                                </li>
+                                <li className="media">
+                                    <i className="fas fa-square"></i>
+                                    <div className="media-body">Informations détaillées sur chaque projet (retour sur investissement, impact social, création d’emplois</div>
                                 </li>
                             </ul>
-                            <p className="price">Starting at <span>$199</span></p>
                         </div>
-                        <div className="button-container">
-                            <a className="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
-                        </div> {/* end of button-container */}
                     </div>
                     {/* end of card */}
 
-                    {/* Card */}
+                    {/* Card 2*/}
                     <div className="card">
                         <div className="card-image">
                             <img className="img-fluid" src="images/services-2.jpg" alt="alternative"/>
                         </div>
                         <div className="card-body">
-                            <h3 className="card-title">Accelerated Growth</h3>
-                            <p>Use this service pack to give your company the necessary impulse to become an industry leader</p>
+                            <h3 className="card-title">🔄 Gestion des Demandes et Suivi des Projets</h3>
                             <ul className="list-unstyled li-space-lg">
                                 <li className="media">
                                     <i className="fas fa-square"></i>
-                                    <div className="media-body">Business strategy planning</div>
+                                    <div className="media-body">Soumission simplifiée des demandes d’investissement et validation par les gestionnaires</div>
                                 </li>
                                 <li className="media">
                                     <i className="fas fa-square"></i>
-                                    <div className="media-body">Taking the planned actions</div>
+                                    <div className="media-body">Suivi en temps réel de l’état des projets et notifications automatiques</div>
+                                </li>
+                                <li className="media">
+                                    <i className="fas fa-square"></i>
+                                    <div className="media-body">Workflow sécurisé avec authentification et gestion des rôles (investisseur, porteur, admin)</div>
                                 </li>
                             </ul>
-                            <p className="price">Starting at <span>$299</span></p>
                         </div>
-                        <div className="button-container">
-                            <a className="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
-                        </div> {/* end of button-container */}
                     </div>
                     {/* end of card */}
 
-                    {/* Card */}
+                    {/* Card 3*/}
                     <div className="card">
                         <div className="card-image">
                             <img className="img-fluid" src="images/services-3.jpg" alt="alternative"/>
                         </div>
                         <div className="card-body">
-                            <h3 className="card-title">Market Domination</h3>
-                            <p>You already are a reference point in your industry now you need to learn about acquisitions</p>
+                            <h3 className="card-title">📊 Tableaux de Bord et Analyses</h3>
                             <ul className="list-unstyled li-space-lg">
                                 <li className="media">
                                     <i className="fas fa-square"></i>
-                                    <div className="media-body">Maintaining the leader status</div>
+                                    <div className="media-body">Visualisation interactive des KPIs financiers et des tendances sectorielles</div>
                                 </li>
                                 <li className="media">
                                     <i className="fas fa-square"></i>
-                                    <div className="media-body">Acquisitions the right way</div>
+                                    <div className="media-body">Outils d’aide à la décision basés sur les données en temps réel</div>
+                                </li>
+                                <li className="media">
+                                    <i className="fas fa-square"></i>
+                                    <div className="media-body">Rapports personnalisés pour investisseurs et autorités régionales</div>
                                 </li>
                             </ul>
-                            <p className="price">Starting at <span>$299</span></p>
                         </div>
-                        <div className="button-container">
-                            <a className="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
-                        </div> {/* end of button-container */}
+                    </div>
+                    {/* end of card */}
+                    
+                    {/* Card 4*/}
+                    <div className="card">
+                        <div className="card-image">
+                            <img className="img-fluid" src="images/services-4.jpg" alt="alternative"/>
+                        </div>
+                        <div className="card-body">
+                            <h3 className="card-title">🌐 Accompagnement et Collaboration</h3>
+                            <ul className="list-unstyled li-space-lg">
+                                <li className="media">
+                                    <i className="fas fa-square"></i>
+                                    <div className="media-body">Annuaire des partenaires régionaux pour faciliter les contacts et partenariats</div>
+                                </li>
+                                <li className="media">
+                                    <i className="fas fa-square"></i>
+                                    <div className="media-body">Forums et modules communautaires pour échanges et évaluations</div>
+                                </li>
+                                <li className="media">
+                                    <i className="fas fa-square"></i>
+                                    <div className="media-body">Assistance multilingue avec chatbot intelligent pour répondre aux questions réglementaires et techniques</div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     {/* end of card */}
 
@@ -379,16 +396,16 @@ function Home() {
             
             {/* Accordion */}
             <div className="accordion-container" id="accordionOne">
-                <h2>Accelerate Business Growth To Improve Revenue Numbers</h2>
+                <h2>Accélérez la croissance de votre projet et amplifiez son impact régional.</h2>
                 <div className="item">
                     <div id="headingOne">
                         <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
-                            <span className="circle-numbering">1</span><span className="accordion-title">How Can Aria Help Your Business</span>
+                            <span className="circle-numbering">1</span><span className="accordion-title">Un Accompagnement Complet</span>
                         </span>
                     </div>
                     <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
                         <div className="accordion-body">
-                            At Aria solutions, we’ve taken the consultancy concept one step further by offering a full service management organization with expertise.
+                            La Banque de Projets Drâa-Tafilalet vous guide à chaque étape : identification, structuration, validation et mise en œuvre. Elle connecte porteurs de projets, investisseurs et partenaires autour d'une vision partagée.
                         </div>
                     </div>
                 </div> {/* end of item */}
@@ -396,12 +413,12 @@ function Home() {
                 <div className="item">
                     <div id="headingTwo">
                         <span className="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                            <span className="circle-numbering">2</span><span className="accordion-title">Great Strategic Business Planning</span>
+                            <span className="circle-numbering">2</span><span className="accordion-title">Structuration Stratégique</span>
                         </span>
                     </div>
                     <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
                         <div className="accordion-body">
-                            Aria partners with businesses to business growth and development ideas including environment analysis, plan execution and evaluation.
+                           Déposez, suivez et développez votre projet via un workflow clair et transparent, aligné sur les priorités régionales.
                         </div>
                     </div>
                 </div> {/* end of item */}
@@ -409,12 +426,12 @@ function Home() {
                 <div className="item">
                     <div id="headingThree">
                         <span className="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
-                            <span className="circle-numbering">3</span><span className="accordion-title">Online Marketing Campaigns</span>
+                            <span className="circle-numbering">3</span><span className="accordion-title">Visibilité & Attractivité</span>
                         </span>
                     </div>
                     <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
                         <div className="accordion-body">
-                            An awesome online marketing plan won't save your bad product but paired with a good product, the sky is the limit for what can be achieved.
+                            Valorisez votre projet grâce à des fiches détaillées, des visites virtuelles, des labels durables et des recommandations intelligentes.
                         </div>
                     </div>
                 </div> {/* end of item */}
@@ -434,13 +451,13 @@ function Home() {
                 {/* Tabs Links */}
                 <ul className="nav nav-tabs" id="ariaTabs" role="tablist">
                     <li className="nav-item">
-                        <a className="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i className="fas fa-th"></i> Business</a>
+                        <a className="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i className="fas fa-th"></i> Intervention</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i className="fas fa-th"></i> Expertise</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i className="fas fa-th"></i> Quality</a>
+                        <a className="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i className="fas fa-th"></i> Qualité</a>
                     </li>
                 </ul>
                 {/* end of tabs links */}
@@ -450,20 +467,20 @@ function Home() {
 
                     {/* Tab */}
                     <div className="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                        <h4>Business Services For Companies</h4>
-                        <p>Aria provides the most innovative and customized business services in the industry. Our <a className="green page-scroll" href="#services">Services</a> section shows how flexible we are for all types of budgets.</p>
+                        <h4>Interventions au Service du Développement Régional</h4>
+                        <p>La Banque de Projets Drâa-Tafilalet propose des outils innovants et adaptés pour soutenir les initiatives de développement dans tous les secteurs stratégiques. Cette section illustre la diversité et l'efficacité de nos domaines d’intervention.</p>
                         
                         {/* Progress Bars */}
                         <div className="progress-container">
-                            <div className="title">Business Development 100%</div>
+                            <div className="title">Développement de Projets – 100%</div>
                             <div className="progress">
                                 <div className="progress-bar first" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <div className="title">Opportunity Spotting 76%</div>
+                            <div className="title">Identification d’Opportunités – 76%</div>
                             <div className="progress">
                                 <div className="progress-bar second" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <div className="title">Online Marketing 90%</div>
+                            <div className="title">Valorisation Digitale – 90%</div>
                             <div className="progress">
                                 <div className="progress-bar third" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
@@ -549,8 +566,8 @@ function Home() {
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
-                    <h2>Read Our Customer Testimonials</h2>
-                    <p className="p-heading">Our clients are our partners and we can not imagine a better future for our company without helping them reach their objectives</p>
+                    <h2>Découvrez les Témoignages de Nos Utilisateurs</h2>
+                    <p className="p-heading">Nos porteurs de projets et investisseurs sont au cœur de notre mission. Leur succès est la meilleure preuve de l’efficacité et de l’impact de la plateforme pour le développement régional.</p>
                 </div> {/* end of col */}
             </div> {/* end of row */}
             <div className="row">
@@ -566,8 +583,8 @@ function Home() {
                                     <div className="card">
                                         <img className="card-image" src="images/testimonial-1.jpg" alt="alternative"/>
                                         <div className="card-body">
-                                            <div className="testimonial-text">The guys from Aria helped with getting my business off the ground and turning into a profitable company.</div>
-                                            <div className="testimonial-author">Jude Thorn - Founder</div>
+                                            <div className="testimonial-text">Ma démarche a été structurée grâce à la plateforme, et a attiré les bons partenaires pour créer un réel impact local.</div>
+                                            <div className="testimonial-author">Youssef El Amrani – Porteur de Projet</div>
                                         </div>
                                     </div>
                                 </div> {/* end of swiper-slide */}
@@ -578,8 +595,8 @@ function Home() {
                                     <div className="card">
                                         <img className="card-image" src="images/testimonial-2.jpg" alt="alternative"/>
                                         <div className="card-body">
-                                            <div className="testimonial-text">I purchased the Growth Accelerator service pack a few years ago and I renewed the contract each year. </div>
-                                            <div className="testimonial-author">Marsha Singer - Marketer</div>
+                                            <div className="testimonial-text">La plateforme m’a aidé à trouver des projets fiables et à investir durablement à Drâa-Tafilalet. </div>
+                                            <div className="testimonial-author">Karim El Fassi – Investisseur</div>
                                         </div>
                                     </div>        
                                 </div> {/* end of swiper-slide */}
@@ -590,8 +607,8 @@ function Home() {
                                     <div className="card">
                                         <img className="card-image" src="images/testimonial-3.jpg" alt="alternative"/>
                                         <div className="card-body">
-                                            <div className="testimonial-text">Aria's CEO personally attends client meetings and gives his feedback on business growth strategies.</div>
-                                            <div className="testimonial-author">Roy Smith - Developer</div>
+                                            <div className="testimonial-text">Le directeur intervient directement pour guider les porteurs de projets.</div>
+                                            <div className="testimonial-author">Rachid Smail – Développeur</div>
                                         </div>
                                     </div>        
                                 </div> {/* end of swiper-slide */}
@@ -602,8 +619,8 @@ function Home() {
                                     <div className="card">
                                         <img className="card-image" src="images/testimonial-4.jpg" alt="alternative"/>
                                         <div className="card-body">
-                                            <div className="testimonial-text">At the beginning I thought the prices are a little high for what they offer but they over deliver each and every time.</div>
-                                            <div className="testimonial-author">Ronald Spice - Owner</div>
+                                            <div className="testimonial-text">La plateforme m’a aidée à découvrir de nouveaux projets et à soutenir le développement de la région.</div>
+                                            <div className="testimonial-author">Samira El Fassi – Porteuse de Projet</div>
                                         </div>
                                     </div>
                                 </div> {/* end of swiper-slide */}
@@ -614,8 +631,8 @@ function Home() {
                                     <div className="card">
                                         <img className="card-image" src="images/testimonial-5.jpg" alt="alternative"/>
                                         <div className="card-body">
-                                            <div className="testimonial-text">I recommend Aria to every business owner or growth leader that wants to take his company to the next level.</div>
-                                            <div className="testimonial-author">Lindsay Rune - Manager</div>
+                                            <div className="testimonial-text">je recommande cette plateforme à tous les porteurs de projets.</div>
+                                            <div className="testimonial-author">Aghjedim Ayoub - Manager</div>
                                         </div>
                                     </div>        
                                 </div> {/* end of swiper-slide */}
@@ -626,8 +643,8 @@ function Home() {
                                     <div className="card">
                                         <img className="card-image" src="images/testimonial-6.jpg" alt="alternative"/>
                                         <div className="card-body">
-                                            <div className="testimonial-text">My goals for using Aria's services seemed high when I first set them but they've met them with no problems.</div>
-                                            <div className="testimonial-author">Ann Black - Consultant</div>
+                                            <div className="testimonial-text">Un outil essentiel pour soutenir les projets de Drâa-Tafilalet.</div>
+                                            <div className="testimonial-author">Lina Bensalah – Gestionnaire de Projets</div>
                                         </div>
                                     </div>        
                                 </div> {/* end of swiper-slide */}

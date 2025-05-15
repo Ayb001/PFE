@@ -768,47 +768,7 @@ input[type='checkbox'] {
 }
 
 
-/*********************/
-/*    04. Header     */
-/*********************/
-.header {
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/header-background.jpg') center center no-repeat;
-	background-size: cover;
-}
 
-.header .header-content {
-	padding-top: 8rem;
-	padding-bottom: 2.125rem;
-	text-align: center;
-}
-
-.header .text-container {
-	margin-bottom: 3rem;
-}
-
-.header h1 {
-	margin-bottom: 0.5rem;
-	color: #fff;
-}
-
-.header .p-large {
-	margin-bottom: 2rem;
-	color: #dfe5ec;
-}
-
-.header .btn-solid-lg {
-	margin-right: 0.5rem;
-	margin-bottom: 1.25rem;
-}
-
-
-/* rotating header animation */
-
-#js-rotating .letter {
-	display: inline-block;
-	line-height: 1em;
-	opacity: 0; /* Start with letters invisible */
-  }
 
 /*********************/
 /*     05. Intro     */
@@ -853,6 +813,121 @@ input[type='checkbox'] {
 } 
 /* end of hover animation */
 
+/*********************/
+/*    04. Header     */
+/*********************/
+.header {
+  position: relative;
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+  background: none; /* no background image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Video background styling */
+.header video.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* behind overlay and content */
+  pointer-events: none; /* so clicks pass through */
+}
+
+/* Dark gradient overlay for readability */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.35), 
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: -1;
+}
+
+/* Container for content */
+.header .header-content {
+  position: relative; /* above overlay */
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: 8rem;
+  padding-bottom: 2.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text container spacing */
+.header .text-container {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Heading styles */
+.header h1 {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: #fff;
+}
+
+/* Large paragraph styles */
+.header .p-large {
+  margin-bottom: 2rem;
+  color: rgba(223, 229, 236, 0.9);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button styling */
+.header .btn-solid-lg {
+  margin-right: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.85rem 2.25rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 50px;
+  background-color: #2a9d8f; /* Adjust as needed */
+  color: #fff;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.header .btn-solid-lg:hover,
+.header .btn-solid-lg:focus {
+  background-color: #21867a;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Rotating header animation */
+#js-rotating .letter {
+  display: inline-block;
+  line-height: 1em;
+  opacity: 0; /* Start invisible for animation */
+  transition: opacity 0.3s ease;
+}
 
 /***************************/
 /*     06. Description     */
