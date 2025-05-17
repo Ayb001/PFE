@@ -101,12 +101,10 @@ function Home() {
     {/* end of preloader */}
     
 
-    {/* Navbar */}
-    <nav className="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
-        {/* Text Logo - Use this if you don't have a graphic logo */}
-        {/* <a className="navbar-brand logo-text page-scroll" href="index.html">Aria</a> */}
-
-        {/* Image Logo */}
+{/* Navbar */}
+<nav className="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+    {/* Image Logo */}
+    <div className="container">
         <a className="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="alternative"/></a>
         
         {/* Mobile Menu Toggle Button */}
@@ -117,55 +115,27 @@ function Home() {
         {/* end of mobile menu toggle button */}
 
         <div className="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                    <a className="nav-link page-scroll" href="#header">HOME <span className="sr-only">(current)</span></a>
-                </li>
+            <ul className="navbar-nav mx-auto">
                 <li className="nav-item">
                     <a className="nav-link page-scroll" href="#intro">INTRO</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link page-scroll" href="#services">SERVICES</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link page-scroll" href="#callMe">CALL ME</a>
-                </li>
-                <li className="nav-item">
                     <a className="nav-link page-scroll" href="#projects">PROJECTS</a>
                 </li>
-
-                {/* Dropdown Menu */}          
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
-                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="terms-conditions.html"><span className="item-text">TERMS CONDITIONS</span></a>
-                        <div className="dropdown-items-divide-hr"></div>
-                        <a className="dropdown-item" href="privacy-policy.html"><span className="item-text">PRIVACY POLICY</span></a>
-                    </div>
+                <li className="nav-item">
+                    <a className="nav-link page-scroll" href="#about">ABOUT</a>
                 </li>
-                {/* end of dropdown menu */}
-
                 <li className="nav-item">
                     <a className="nav-link page-scroll" href="#contact">CONTACT</a>
                 </li>
             </ul>
-            <span className="nav-item social-icons">
-                <span className="fa-stack">
-                    <a href="#your-link">
-                        <span className="hexagon"></span>
-                        <i className="fab fa-facebook-f fa-stack-1x"></i>
-                    </a>
-                </span>
-                <span className="fa-stack">
-                    <a href="#your-link">
-                        <span className="hexagon"></span>
-                        <i className="fab fa-twitter fa-stack-1x"></i>
-                    </a>
-                </span>
-            </span>
+            <div className="connect-button">
+                <a className="btn-solid-lg" href="#connect">CONNECT</a>
+            </div>
         </div>
-    </nav> {/* end of navbar */}
-    {/* end of navbar */}
+    </div>
+</nav> {/* end of navbar */}
+{/* end of navbar */}
 
 
  
@@ -695,22 +665,22 @@ function Home() {
                             <a className="popup-with-move-anim" href="#project-2"><div className="element-item-overlay"><span>Cartographie Géologique</span></div><img src="images/project-2.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item design development marketing">
-                            <a className="popup-with-move-anim" href="#project-3"><div className="element-item-overlay"><span>BoomBap Audio</span></div><img src="images/project-3.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-3"><div className="element-item-overlay"><span>Écolodge – Vallée du Ziz</span></div><img src="images/project-3.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item design development marketing">
-                            <a className="popup-with-move-anim" href="#project-4"><div className="element-item-overlay"><span>Van Moose</span></div><img src="images/project-4.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-4"><div className="element-item-overlay"><span>Restauration d’une Kasbah</span></div><img src="images/project-4.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item design development marketing seo">
-                            <a className="popup-with-move-anim" href="#project-5"><div className="element-item-overlay"><span>Joy Moments</span></div><img src="images/project-5.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-5"><div className="element-item-overlay"><span>Centrale Solaire</span></div><img src="images/project-5.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item design marketing seo">
-                            <a className="popup-with-move-anim" href="#project-6"><div className="element-item-overlay"><span>Spark Events</span></div><img src="images/project-6.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-6"><div className="element-item-overlay"><span>Éoliennes Communautaires</span></div><img src="images/project-6.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item design marketing">
-                            <a className="popup-with-move-anim" href="#project-7"><div className="element-item-overlay"><span>Casual Wear</span></div><img src="images/project-7.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-7"><div className="element-item-overlay"><span>Atelier Artisanat Numérique</span></div><img src="images/project-7.jpg" alt="alternative"/></a>
                         </div>
                         <div className="element-item design marketing">
-                            <a className="popup-with-move-anim" href="#project-8"><div className="element-item-overlay"><span>Zazoo Apps</span></div><img src="images/project-8.jpg" alt="alternative"/></a>
+                            <a className="popup-with-move-anim" href="#project-8"><div className="element-item-overlay"><span>Festival Culturel Régional</span></div><img src="images/project-8.jpg" alt="alternative"/></a>
                         </div>
                     </div> {/* end of grid */}
                     {/* end of filter */}
@@ -777,16 +747,16 @@ function Home() {
                 <img className="img-fluid" src="images/project-3.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>BoomBap Audio</h3>
+                <h3>Écolodge – Vallée du Ziz</h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Tourisme durable</h6>
+                <p>Objectif : Créer un hébergement écoresponsable valorisant les paysages naturels et les traditions locales.</p>
+                <p>Résumé :<br/>Projet d’écotourisme intégrant des matériaux locaux, des pratiques durables et l’implication des habitants.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text">Tourisme responsable et création d’emplois locaux.</p>
+                    <p className="testimonial-author">– S. Ouakrim</p>
                 </div>
-                <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+                 <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> {/* end of col */}
         </div> {/* end of row */}
     </div> {/* end of lightbox-basic */}
@@ -800,16 +770,16 @@ function Home() {
                 <img className="img-fluid" src="images/project-4.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>Van Moose</h3>
+                <h3>Restauration d’une Kasbah</h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Tourisme patrimonial</h6>
+                <p>Objectif : Réhabiliter une kasbah traditionnelle pour en faire un lieu culturel intégré à un circuit touristique.</p>
+                <p>Résumé :<br/>Restauration, création d’un espace muséal, et formation de guides locaux pour valoriser le patrimoine.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text">Préservation du patrimoine et développement local.</p>
+                    <p className="testimonial-author">– F. El Mouden</p>
                 </div>
-                <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+             <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> {/* end of col */}
         </div> {/* end of row */}
     </div> {/* end of lightbox-basic */}
@@ -823,16 +793,16 @@ function Home() {
                 <img className="img-fluid" src="images/project-5.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>Joy Moments</h3>
+                <h3>Centrale Solaire </h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Énergies renouvelables</h6>
+                <p>Objectif : Installer une centrale photovoltaïque pour alimenter localement en énergie propre et durable.</p>
+                <p>Résumé :<br/>Projet visant à réduire la dépendance aux énergies fossiles et à favoriser l’autonomie énergétique de la région.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text">Énergie propre pour un avenir durable.</p>
+                    <p className="testimonial-author">– A. El Ghazali</p>
                 </div>
-                <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+                 <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> {/* end of col */}
         </div> {/* end of row */}
     </div> {/* end of lightbox-basic */}
@@ -846,16 +816,16 @@ function Home() {
                 <img className="img-fluid" src="images/project-6.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>Spark Events</h3>
+                <h3>Éoliennes Communautaires</h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Énergie éolienne</h6>
+                <p>Objectif : Mettre en place des parcs éoliens à petite échelle pour fournir de l’électricité aux zones rurales.</p>
+                <p>Résumé :<br/>Initiative locale soutenant l’accès à l’énergie renouvelable et la création d’emplois verts.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text">Un souffle nouveau pour la région.</p>
+                    <p className="testimonial-author">– M. Benbrahim</p>
                 </div>
-                <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+                 <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> {/* end of col */}
         </div> {/* end of row */}
     </div> {/* end of lightbox-basic */}
@@ -869,14 +839,14 @@ function Home() {
                 <img className="img-fluid" src="images/project-7.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>Casual Wear</h3>
+                <h3>Atelier Artisanat Numérique</h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Industrie créative</h6>
+                <p>Objectif : Créer un espace dédié à la production et à la valorisation de l’artisanat local mêlant techniques traditionnelles et outils numériques.</p>
+                <p>Résumé :<br/>Projet favorisant l’innovation tout en préservant le savoir-faire local et en créant des opportunités pour les jeunes créateurs.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text"> Innovation au service de la tradition.</p>
+                    <p className="testimonial-author">– L. El Amrani</p>
                 </div>
                 <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> {/* end of col */}
@@ -892,14 +862,14 @@ function Home() {
                 <img className="img-fluid" src="images/project-8.jpg" alt="alternative"/>
             </div> {/* end of col */}
             <div className="col-lg-4">
-                <h3>Zazoo Apps</h3>
+                <h3>Festival Culturel Régional</h3>
                 <hr className="line-heading"/>
-                <h6>Strategy Development</h6>
-                <p>Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current needs</p>
-                <p>By offering the best professional services and quality products in the market. Don't hesitate and get in touch with us.</p>
+                <h6>Secteur : Événementiel et arts vivants</h6>
+                <p>Objectif : Organiser un festival annuel mettant en avant les arts, la musique et les cultures locales pour dynamiser le tourisme culturel.</p>
+                <p>Résumé :<br/>Une initiative pour valoriser la richesse culturelle et créer un rendez-vous incontournable pour les habitants et visiteurs.</p>
                 <div className="testimonial-container">
-                    <p className="testimonial-text">Need a solid foundation for your business growth plans? Aria will help you manage sales and meet your current requirements.</p>
-                    <p className="testimonial-author">General Manager</p>
+                    <p className="testimonial-text">Célébrer la culture et renforcer le lien social.</p>
+                    <p className="testimonial-author">– S. Zahraoui</p>
                 </div>
                 <a className="btn-solid-reg" href="#your-link">DETAILS</a> <a className="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
             </div> {/* end of col */}
@@ -909,242 +879,57 @@ function Home() {
     {/* end of project lightboxes */}
 
 
-    {/* Team */}
-    <div className="basic-2">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
-                    <h2>Our Team Of Consultants</h2>
-                    <p className="p-heading">We're only as strong and as knowledgeable as our team. So here are the men and women which help customers meet goals and grow companies</p>
-                </div> {/* end of col */}
-            </div> {/* end of row */}
-            <div className="row">
-                <div className="col-lg-12">
-
-                    {/* Team Member */}
-                    <div className="team-member">
-                        <div className="image-wrapper">
-                            <img className="img-fluid" src="images/team-1.png" alt="alternative"/>
-                        </div> {/* end of image-wrapper */}
-                        <p className="p-large">John Whitelong</p>
-                        <p className="job-title">General Manager</p>
-                        <span className="social-icons">
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-facebook-f fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-twitter fa-stack-1x"></i>
-                                </a>
-                            </span>
-                        </span>
-                    </div> {/* end of team-member */}
-                    {/* end of team member */}
-
-                    {/* Team Member */}
-                    <div className="team-member">
-                        <div className="image-wrapper">
-                            <img className="img-fluid" src="images/team-2.png" alt="alternative"/>
-                        </div> {/* end of image wrapper */}
-                        <p className="p-large">Veronique Smith</p>
-                        <p className="job-title">Business Developer</p>
-                        <span className="social-icons">
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-facebook-f fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-twitter fa-stack-1x"></i>
-                                </a>
-                            </span>
-                        </span>
-                    </div> {/* end of team-member */}
-                    {/* end of team member */}
-
-                    {/* Team Member */}
-                    <div className="team-member">
-                        <div className="image-wrapper">
-                            <img className="img-fluid" src="images/team-3.png" alt="alternative"/>
-                        </div> {/* end of image wrapper */}
-                        <p className="p-large">Chris Zimerman</p>
-                        <p className="job-title">Online Marketer</p>
-                        <span className="social-icons">
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-facebook-f fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-twitter fa-stack-1x"></i>
-                                </a>
-                            </span>
-                        </span>
-                    </div> {/* end of team-member */}
-                    {/* end of team member */}
-
-                    {/* Team Member */}
-                    <div className="team-member">
-                        <div className="image-wrapper">
-                            <img className="img-fluid" src="images/team-4.png" alt="alternative"/>
-                        </div> {/* end of image wrapper */}
-                        <p className="p-large">Mary Villalonga</p>
-                        <p className="job-title">Community Manager</p>
-                        <span className="social-icons">
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-facebook-f fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span className="fa-stack">
-                                <a href="#your-link">
-                                    <span className="hexagon"></span>
-                                    <i className="fab fa-twitter fa-stack-1x"></i>
-                                </a>
-                            </span>
-                        </span>
-                    </div> {/* end of team-member */}
-                    {/* end of team member */}
-
-                </div> {/* end of col */}
-            </div> {/* end of row */}
-        </div> {/* end of container */}
-    </div> {/* end of basic-2 */}
-    {/* end of team */}
-
-
-    {/* About */}
-    <div id="about" className="counter">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-5 col-xl-6">
-                    <div className="image-container">
-                        <img className="img-fluid" src="images/about.jpg" alt="alternative"/>
-                    </div> {/* end of image-container */}
-                </div> {/* end of col */}
-                <div className="col-lg-7 col-xl-6">
-                    <div className="text-container">
-                        <div className="section-title">ABOUT</div>
-                        <h2>We're Passionate About Delivering Growth Services</h2>
-                        <p>Our goal is to provide the right business growth services at the appropriate time so companies can benefit from the created momentum and thrive for a long period of time</p>
-                        <ul className="list-unstyled li-space-lg">
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">Everything we recommend has direct positive impact</div>
-                            </li>
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">You will become an important partner of our company</div>
-                            </li>
-                        </ul>
+{/* About */}
+<div id="about" className="counter">
+    <div className="container">
+        <div className="row">
+            <div className="col-lg-5 col-xl-6">
+                <div className="image-container">
+                    <img className="img-fluid" src="images/about.jpg" alt="Banque de Projets" />
+                </div> {/* end of image-container */}
+            </div> {/* end of col */}
+            <div className="col-lg-7 col-xl-6">
+                <div className="text-container">
+                    <div className="section-title">À PROPOS</div>
+                    <h2>Une Plateforme au Service du Développement Régional</h2>
+                    <p>
+                        La Banque de Projets du CRI Drâa-Tafilalet accompagne les initiatives locales en facilitant la connexion entre porteurs de projets, investisseurs et partenaires. Elle soutient une croissance durable, inclusive et ancrée dans les réalités de la région.
+                    </p>
+                    <ul className="list-unstyled li-space-lg">
+                        <li className="media">
+                            <i className="fas fa-square"></i>
+                            <div className="media-body">Favoriser l’investissement local et national dans tous les secteurs clés</div>
+                        </li>
+                        <li className="media">
+                            <i className="fas fa-square"></i>
+                            <div className="media-body">Valoriser les projets porteurs d’impact social, culturel et environnemental</div>
+                        </li>
+                    </ul>
 
                         {/* Counter */}
                         <div id="counter">
                             <div className="cell">
-                                <div className="counter-value number-count" data-count="231">1</div>
-                                <div className="counter-info">Happy<br/>Users</div>
+                                <div className="counter-value number-count" data-count="30">1</div>
+                                <div className="counter-info">Projets<br/>Référencés</div>
                             </div>
                             <div className="cell">
-                                <div className="counter-value number-count" data-count="121">1</div>
-                                <div className="counter-info">Issues<br/>Solved</div>
+                                <div className="counter-value number-count" data-count="10">1</div>
+                                <div className="counter-info">Porteurs<br/>Accompagnés</div>
                             </div>
                             <div className="cell">
-                                <div className="counter-value number-count" data-count="159">1</div>
-                                <div className="counter-info">Good<br/>Reviews</div>
+                                <div className="counter-value number-count" data-count="6">1</div>
+                                <div className="counter-info">Secteurs<br/>Couverts</div>
                             </div>
                         </div>
                         {/* end of counter */}
 
-                    </div> {/* end of text-container */}      
-                </div> {/* end of col */}
-            </div> {/* end of row */}
-        </div> {/* end of container */}
-    </div> {/* end of counter */}
-    {/* end of about */}
 
- {/* Call Me */}
-    <div id="callMe" className="form-1">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-6">
-                    <div className="text-container">
-                        <div className="section-title">CALL ME</div>
-                        <h2 className="white">Have Us Contact You By Filling And Submitting The Form</h2>
-                        <p className="white">You are just a few steps away from a personalized offer. Just fill in the form and send it to us and we'll get right back with a call to help you decide what service package works.</p>
-                        <ul className="list-unstyled li-space-lg white">
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">It's very easy just fill in the form so we can call</div>
-                            </li>
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">During the call we'll require some info about the company</div>
-                            </li>
-                            <li className="media">
-                                <i className="fas fa-square"></i>
-                                <div className="media-body">Don't hesitate to email us for any questions or inquiries</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> {/* end of col */}
-                <div className="col-lg-6">
-                   
-                    {/* Call Me Form */}
-                    <form id="callMeForm" data-toggle="validator" data-focus="false">
-                        <div className="form-group">
-                            <input type="text" className="form-control-input" id="lname" name="lname" required/>
-                            <label className="label-control" for="lname">Name</label>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <input type="text" className="form-control-input" id="lphone" name="lphone" required/>
-                            <label className="label-control" for="lphone">Phone</label>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <input type="email" className="form-control-input" id="lemail" name="lemail" required/>
-                            <label className="label-control" for="lemail">Email</label>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <select className="form-control-select" id="lselect" required>
-                                <option className="select-option" value="" disabled selected>Interested in...</option>
-                                <option className="select-option" value="Off The Ground">Off The Ground</option>
-                                <option className="select-option" value="Accelerated Growth">Accelerated Growth</option>
-                                <option className="select-option" value="Market Domination">Market Domination</option>
-                            </select>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group checkbox white">
-                            <input type="checkbox" id="lterms" value="Agreed-to-Terms" name="lterms" required/>I agree with Aria's stated <a className="white" href="privacy-policy.html">Privacy Policy</a> and <a className="white" href="terms-conditions.html">Terms & Conditions</a>
-                            <div className="help-block with-errors"></div>
-                        </div>
-                        <div className="form-group">
-                            <button type="submit" className="form-control-submit-button">CALL ME</button>
-                        </div>
-                        <div className="form-message">
-                            <div id="lmsgSubmit" className="h3 text-center hidden"></div>
-                        </div>
-                    </form>
-                    {/* end of call me form */}
-                    
-                </div> {/* end of col */}
-            </div> {/* end of row */}
-        </div> {/* end of container */}
-    </div> {/* end of form-1 */}
-    {/* end of call me */}
-
+                </div> {/* end of text-container */}      
+            </div> {/* end of col */}
+        </div> {/* end of row */}
+    </div> {/* end of container */}
+</div> {/* end of counter */}
+{/* end of about */}
 
     {/* Contact */}
     <div id="contact" className="form-2">
@@ -1238,6 +1023,81 @@ function Home() {
         </div> {/* end of container */}
     </div> {/* end of form-2 */}
     {/* end of contact */}
+              {/* Footer */}
+    <div className="footer">
+      <div className="container">
+          <div className="row">
+              <div className="col-md-6">
+                  <div className="text-container about">
+                      <h4>Few Words About Aria</h4>
+                      <p className="white">We're passionate about delivering the best business growth services for companies just starting out as startups or industry players that have established their market position a long tima ago.</p>
+                  </div> {/* end of text-container */}
+              </div> {/* end of col */}
+              <div className="col-md-2">
+                  <div className="text-container">
+                      <h4>Links</h4>
+                      <ul className="list-unstyled li-space-lg white">
+                          <li>
+                              <a className="white" href="#your-link">startupguide.com</a>
+                          </li>
+                          <li>
+                              <a className="white" href="terms-conditions.html">Terms & Conditions</a>
+                          </li>
+                          <li>
+                              <a className="white" href="privacy-policy.html">Privacy Policy</a>
+                          </li>
+                      </ul>
+                  </div> {/* end of text-container */}
+              </div> {/* end of col */}
+              <div className="col-md-2">
+                  <div className="text-container">
+                      <h4>Tools</h4>
+                      <ul className="list-unstyled li-space-lg">
+                          <li>
+                              <a className="white" href="#your-link">businessgrowth.com</a>
+                          </li>
+                          <li>
+                             <a className="white" href="#your-link">influencers.com</a>
+                          </li>
+                          <li className="media">
+                              <a className="white" href="#your-link">optimizer.net</a>
+                          </li>
+                      </ul>
+                  </div> {/* end of text-container */}
+              </div> {/* end of col */}
+              <div className="col-md-2">
+                  <div className="text-container">
+                      <h4>Partners</h4>
+                      <ul className="list-unstyled li-space-lg">
+                          <li>
+                              <a className="white" href="#your-link">unicorns.com</a>
+                          </li>
+                          <li>
+                              <a className="white" href="#your-link">staffmanager.com</a>
+                          </li>
+                          <li>
+                              <a className="white" href="#your-link">association.gov</a>
+                          </li>
+                      </ul>
+                  </div> {/* end of text-container */}
+              </div> {/* end of col */}
+          </div> {/* end of row */}
+      </div> {/* end of container */}
+  </div> {/* end of footer */}  
+  {/* end of footer */}
+
+
+  {/* Copyright */}
+  <div className="copyright">
+      <div className="container">
+          <div className="row">
+              <div className="col-lg-12">
+                  <p className="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
+              </div> {/* end of col */}
+          </div> {/* enf of row */}
+      </div> {/* end of container */}
+  </div> {/* end of copyright */} 
+  {/* end of copyright */}
 
     </div>
   )
