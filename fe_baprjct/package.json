@@ -10,6 +10,7 @@
     "animejs": "^4.0.2",
     "bootstrap": "^5.3.6",
     "jquery": "^3.7.1",
+    "lucide-react": "^0.511.0",
     "magnific-popup": "^1.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -41,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.7"
   }
 }
